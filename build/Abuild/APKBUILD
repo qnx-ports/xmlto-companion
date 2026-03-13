@@ -5,7 +5,7 @@
 # Maintainer: Aaron Bassett <abassett@qnx.com>
 pkgname=xmlto
 pkgver=0.0.29
-pkgrel=2
+pkgrel=${pkgrel:-0}
 pkgdesc="Convert xml to many other formats"
 url="https://pagure.io/xmlto/"
 arch="all"
@@ -40,6 +40,7 @@ package() {
 }
 
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 95b574262b00c5d6460d156a1be6b0684ed2683f4ee0140016f7c88d8cdd7a46b4e090a9e55cee44b7ce88efb68da9af27ff02a182481d05486ed44bea0cc2ce  xmlto-0.0.29.tar.gz
 768337faad18f95df2a3eddaaabe807784da4d3f2b5c65474eb6deb65a2e73ebd29ae84731ddf32f8c00dd80d639e39813e8b0ad9efb26a8e326753101b8973e  disable-man-pages.patch
